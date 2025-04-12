@@ -1,4 +1,5 @@
 <x-form.card>
+
     <x-form wire:submit.prevent="update">
 
         <x-form.section>

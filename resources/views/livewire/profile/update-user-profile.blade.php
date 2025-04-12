@@ -1,4 +1,5 @@
 <x-form.card>
+    <livewire:profile.photo-upload :model="auth()->user()"/>
     <x-form wire:submit.prevent="update">
 
         <x-form.section>

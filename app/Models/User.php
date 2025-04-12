@@ -3,6 +3,7 @@
     namespace App\Models;
 
     // use Illuminate\Contracts\Auth\MustVerifyEmail;
+    use App\Traits\HasProfilePhoto;
     use Illuminate\Contracts\Auth\MustVerifyEmail;
     use Illuminate\Database\Eloquent\Factories\HasFactory;
     use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,7 +12,7 @@
     class User extends Authenticatable implements MustVerifyEmail
     {
         /** @use HasFactory<\Database\Factories\UserFactory> */
-        use HasFactory, Notifiable;
+        use HasFactory, Notifiable, HasProfilePhoto;
 
         /**
          * The attributes that are mass assignable.
@@ -21,6 +22,7 @@
         protected $fillable = [
             'name',
             'email',
+            'profile_photo_url',
             'password',
         ];
         /**
@@ -33,15 +35,8 @@
             'remember_token',
         ];
 
-        protected $appends = ['avatar_url'];
+        protected $appends = [];
 
-        /**
-         * @return string
-         */
-        public function getAvatarUrlAttribute(): string
-        {
-            return "https://ui-avatars.com/api/?name=" . $this->name;
-        }
 
         /**
          * Get the attributes that should be cast.

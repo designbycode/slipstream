@@ -17,7 +17,7 @@
                                 aria-haspopup="true"
                                 id="menu-profile"
                                 class="flex items-center space-x-1.5">
-                                <img class="size-8 rounded-full" src="{{ auth()->user()->avatar_url }}" alt="{{ auth()->user()->name }}">
+                                <img class="size-8 rounded-full" src="{{ auth()->user()->profilePhotoUrl() }}" alt="{{ auth()->user()->name }}">
                                 <span class="text-sm">{{ auth()->user()->name }}</span>
                             </button>
                             <div hidden class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black/10 ring-opacity-5 divide-y divide-gray-100 focus:outline-none"

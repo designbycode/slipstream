@@ -6,7 +6,7 @@
 {{ json_encode(auth()->user(), JSON_PRETTY_PRINT) }}
 </pre>
 
-
+        {{ auth()->user()->profilePhotoUrl() }}
     </div>
 
 </x-app-layout>

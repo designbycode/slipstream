@@ -17,18 +17,6 @@
         {
 
 
-//        Validator::make($input, [
-//            'name' => ['required', 'string', 'max:255'],
-//
-//            'email' => [
-//                'required',
-//                'string',
-//                'email',
-//                'max:255',
-//                Rule::unique('users')->ignore($user->id),
-//            ],
-//        ])->validateWithBag('updateProfileInformation');
-
             if ($input['email'] !== $user->email &&
                 $user instanceof MustVerifyEmail) {
                 $this->updateVerifiedUser($user, $input);

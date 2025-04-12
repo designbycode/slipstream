@@ -10,3 +10,5 @@
 
     Route::get('/dashboard', DashboardIndexPageController::class)->name('dashboard.index');
     Route::get('/profile', ProfileIndexPageController::class)->name('profile.index');
+
+
