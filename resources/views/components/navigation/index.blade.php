@@ -48,7 +48,7 @@
                 aria-controls="mobile_close"
                 aria-expanded="false"
                 @class([
-                'lg:hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-900 rounded-md size-8 grid place-content-center
+                'lg:hidden focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-primary-100 focus:ring-primary-900 rounded-md size-8 grid place-content-center
                 '])
                 type="button">
                 <span class="sr-only">Open menu</span>

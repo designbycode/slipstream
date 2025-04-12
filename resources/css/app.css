@@ -11,6 +11,19 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
     'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-primary: oklch(45.979% 0.03633 315.74);
+    --color-primary-50: oklch(97.435% 0.00676 325.63);
+    --color-primary-100: oklch(91.197% 0.01273 329.57);
+    --color-primary-200: oklch(82.35% 0.02467 325.8);
+    --color-primary-300: oklch(67.167% 0.03933 323.15);
+    --color-primary-400: oklch(56.413% 0.04786 318.65);
+    --color-primary-500: oklch(45.979% 0.03633 315.74);
+    --color-primary-600: oklch(40.429% 0.03135 313.68);
+    --color-primary-700: oklch(34.682% 0.02622 310.63);
+    --color-primary-800: oklch(29.047% 0.01921 307.73);
+    --color-primary-900: oklch(22.86% 0.01404 304.72);
+    --color-primary-950: oklch(19.585% 0.01036 303.59);
 }
 
 @utility wrapper {
