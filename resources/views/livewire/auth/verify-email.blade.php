@@ -16,7 +16,7 @@
 
             <div class="flex items-center gap-4">
                 <x-button class="flex-1" wire:loading.attr="disabled" wire:click="resendVerificationEmail">Resend Email</x-button>
-                <x-button class="flex-1" wire:loading.attr="disabled" wire:click="checkVerification">I've Verified My Email</x-button>
+                <x-button class="flex-1" wire:loading.attr="disabled" variant="ghost" wire:click="checkVerification">I've Verified My Email</x-button>
             </div>
         </div>
     </x-form.card>

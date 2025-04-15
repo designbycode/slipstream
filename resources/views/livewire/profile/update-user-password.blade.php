@@ -22,7 +22,7 @@
         <x-form.section>
             <div class="flex space-x-4 items-center">
                 <x-button>Save</x-button>
-                <x-form.saved :$saved/>
+                <x-form.action-message on="saved"/>
             </div>
 
         </x-form.section>

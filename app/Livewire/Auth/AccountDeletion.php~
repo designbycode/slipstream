@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Livewire\Auth;
+
+use Illuminate\View\View;
+use Livewire\Component;
+
+class AccountDeletion extends Component
+{
+    
+    public function delete()
+    {   
+        dd("DELETE");
+        
+    }
+    
+    public function render(): View
+    {
+        return view('livewire.auth.account-deletion');
+    }
+}

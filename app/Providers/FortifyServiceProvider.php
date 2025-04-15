@@ -6,6 +6,7 @@
     use App\Actions\Fortify\ResetUserPassword;
     use App\Actions\Fortify\UpdateUserPassword;
     use App\Actions\Fortify\UpdateUserProfileInformation;
+    use App\Livewire\Auth\ConfirmPassword;
     use App\Livewire\Auth\Login;
     use App\Livewire\Auth\Register;
     use App\Livewire\Auth\RequestPassword;
@@ -38,6 +39,7 @@
             Fortify::verifyEmailView(fn () => app()->call(VerifyEmail::class));
             Fortify::requestPasswordResetLinkView(fn () => app()->call(RequestPassword::class));
             Fortify::resetPasswordView(fn (Request $request) => app()->call(ResetPassword::class, ['request' => $request]));
+            Fortify::confirmPasswordView(fn () => app()->call(ConfirmPassword::class));
 
 
             Fortify::createUsersUsing(CreateNewUser::class);
