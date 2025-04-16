@@ -6,6 +6,7 @@
     use App\Actions\Fortify\PasswordValidationRules;
     use Illuminate\Auth\Events\Registered;
     use Illuminate\Support\Facades\App;
+    use Illuminate\Validation\Rule;
     use Illuminate\View\View;
     use Livewire\Attributes\Layout;
     use Livewire\Component;
@@ -55,7 +56,7 @@
         {
             return [
                 'name' => ['required', 'string', 'max:255'],
-                'email' => ['required', 'email', 'max:255'],
+                'email' => ['required', 'email', 'max:255', Rule::unique('users')],
                 'password' => $this->passwordRules(),
                 'terms' => ['accepted'],
             ];
