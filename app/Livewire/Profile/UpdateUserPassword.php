@@ -16,16 +16,12 @@
         public string $current_password = "";
         public string $password = "";
         public string $password_confirmation = "";
-        public bool $saved = false;
 
-        public function update()
+
+        public function update(): void
         {
-            $this->reset('saved');
             $validated = $this->validate();
-
             App::make(UpdatePassword::class)->update(auth()->user(), $validated);
-
-            $this->saved = true;
             $this->dispatch('saved');
             $this->reset(['current_password', 'password', 'password_confirmation']);
         }

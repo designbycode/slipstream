@@ -7,15 +7,10 @@
 
     class AccountDeletion extends Component
     {
-
-        public bool $saved = false;
-
-
         public function triggerModal(): void
         {
             $this->dispatch('openModal', 'profile.modals.account-delete-modal');
         }
-
 
         public function render(): View
         {

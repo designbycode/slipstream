@@ -14,7 +14,7 @@
          */
         public static function middleware(): array
         {
-            return ['auth', 'verified'];
+            return ['auth', 'auth.session', 'verified'];
         }
 
         /**

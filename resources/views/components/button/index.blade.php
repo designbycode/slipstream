@@ -3,11 +3,12 @@
     'variant' => 'solid', // solid, outline, ghost
     'color' => 'primary', // primary, secondary, danger, info, warning
     'size' => 'md', // sm, md, lg
+    'loading' => false
 ])
 
 @php
     // Base classes
-    $baseClasses = 'inline-flex items-center justify-center font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200';
+    $baseClasses = 'inline-flex items-center justify-center disabled:opacity-50 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200';
 
     // Size classes
     $sizeClasses = [
@@ -37,11 +38,11 @@
 
     // Color classes for ghost variant
     $ghostColors = [
-        'primary' => 'border border-transparent text-primary-600 hover:bg-primary-50 focus:ring-primary-200 disabled:opacity-75',
-        'secondary' => 'border border-transparent text-gray-600 hover:bg-gray-50 focus:ring-gray-200 disabled:opacity-75',
-        'danger' => 'border border-transparent text-red-600 hover:bg-red-50 focus:ring-red-200 disabled:opacity-75',
-        'info' => 'border border-transparent text-blue-600 hover:bg-blue-50 focus:ring-blue-200 disabled:opacity-75',
-        'warning' => 'border border-transparent text-yellow-600 hover:bg-yellow-50 focus:ring-yellow-200 disabled:opacity-75',
+        'primary' => 'border border-transparent text-primary-600 hover:bg-primary-50 focus:ring-primary-200',
+        'secondary' => 'border border-transparent text-gray-600 hover:bg-gray-50 focus:ring-gray-200',
+        'danger' => 'border border-transparent text-red-600 hover:bg-red-50 focus:ring-red-200',
+        'info' => 'border border-transparent text-blue-600 hover:bg-blue-50 focus:ring-blue-200',
+        'warning' => 'border border-transparent text-yellow-600 hover:bg-yellow-50 focus:ring-yellow-200',
     ];
 
     // Variant classes
@@ -56,5 +57,14 @@
 @endphp
 
 <button type="{{ $type }}" {{ $attributes->merge(['class' => $classes]) }}>
-    {{ $slot }}
+    <span>
+        {{ $slot }}
+    </span>
+
+    @if($loading)
+        <svg class="animate-spin ml-2 -mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+    @endif
 </button>

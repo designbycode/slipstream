@@ -29,15 +29,9 @@
         public function confirmPassword($password): void
         {
             $this->password = $password;
-            $this->logoutOtherBrowserSessions();
-        }
-
-        public function logoutOtherBrowserSessions(): void
-        {
             if (config('session.driver') !== 'database') {
                 return;
             }
-
             $this->resetErrorBag();
 
             // 1. Get current session ID before any changes
@@ -58,6 +52,7 @@
 
             $this->confirmingLogout = false;
             $this->dispatch('loggedOut');
+
         }
 
         protected function deleteOtherSessionRecords(string $currentSessionId): void
@@ -66,8 +61,9 @@
                 ->table(config('session.table', 'sessions'))
                 ->where('user_id', Auth::id())
                 ->where('id', '!=', $currentSessionId)
-                ->update(['last_activity' => 0]); // Mark as expired
+                ->delete();
         }
+        
 
         public function getSessionsProperty(): Collection
         {

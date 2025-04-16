@@ -1,6 +1,5 @@
 <?php
 
-    use App\Http\Middleware\InvalidateOtherSessions;
     use Illuminate\Foundation\Application;
     use Illuminate\Foundation\Configuration\Exceptions;
     use Illuminate\Foundation\Configuration\Middleware;
@@ -12,7 +11,7 @@
             health: '/up',
         )
         ->withMiddleware(function (Middleware $middleware) {
-            $middleware->append(InvalidateOtherSessions::class);
+//            $middleware->append(InvalidateOtherSessions::class);
         })
         ->withExceptions(function (Exceptions $exceptions) {
             //

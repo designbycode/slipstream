@@ -24,7 +24,7 @@
                 <p class="text-sm opacity-75">Add additional security to your account using two factor authentication.</p>
             </div>
             <div class="md:col-span-2">
-                <livewire:profile.update-user-password/>
+                <livewire:profile.two-factor/>
             </div>
             <!--browser sessiions-->
             <div>

@@ -7,6 +7,7 @@
     use App\Models\User;
     use Illuminate\Support\Facades\App;
     use Illuminate\Validation\Rule;
+    use Illuminate\View\View;
     use Livewire\Component;
 
     class UpdateUserProfile extends Component
@@ -18,7 +19,7 @@
         public ?string $name;
         public ?string $email;
 
-        public bool $saved = false;
+        public bool $loading = false;
 
         public function mount(): void
         {
@@ -43,16 +44,14 @@
          * @return void
          * @throws \Illuminate\Validation\ValidationException
          */
-        public function update()
+        public function update(): void
         {
-            $this->reset('saved');
             $validated = $this->validate();
             App::make(UpdateUserProfileInformation::class)->update($this->user, $validated);
-            $this->saved = true;
             $this->dispatch('saved'); // Dispatch browser event
         }
 
-        public function render()
+        public function render(): View
         {
             return view('livewire.profile.update-user-profile');
         }

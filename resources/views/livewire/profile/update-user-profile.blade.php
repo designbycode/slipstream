@@ -16,7 +16,7 @@
 
         <x-form.section>
             <div class="flex space-x-4 items-center">
-                <x-button>Save</x-button>
+                <x-button :$loading wire:loading.attr="disabled">Save</x-button>
                 <x-form.action-message on="saved"/>
             </div>
 
